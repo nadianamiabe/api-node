@@ -1,10 +1,14 @@
 'use strict'
 
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+//conecta ao banco 
+mongoose.connect('mongodb+srv://nami:nami@nodeapi-svqgk.azure.mongodb.net/test?retryWrites=true&w=majority')
 
 //carrega as rotas 
 const indexRoute = require('./routes/index-route');
